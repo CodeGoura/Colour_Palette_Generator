@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Pratice Flex box</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 33.33vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .box {
+            width: 35vh;
+            height: 15vh;
+            border: 2px solid gray;
+            font-size: larger;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* margin-right: 2rem; */
+        }
+
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box::selection {
+            color: black;
+            background-color: white;
+
+        }
+
+        h2 {
+            align-self: flex-start;
+            margin-top: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Color Palette 1</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="container">
+        <h2>Color Palette 2</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="container">
+        <h2>Color Palette 3</h2>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        boxes = document.querySelectorAll(".box");
+        function randomColor() {
+            let red = Math.floor(Math.random() * (255 - 1));
+            let green = Math.floor(Math.random() * (255 - 1));
+            let blue = Math.floor(Math.random() * (255 - 1));
+            return `rgb(${red}, ${green}, ${blue})`;
+        }
+        for (const box of boxes) {
+            box.style.backgroundColor = randomColor();
+            box.innerText = randomColor();
+            box.classList.add("center")
+        }
+    </script>
+</body>
+
+</html>
